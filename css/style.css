@@ -115,9 +115,9 @@ footer {
     padding: 20px;
 }
 .article-image {
-    max-width: 220px; /* Ще менші фото */
+    max-width: 220px;
     height: auto;
-    
+
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -162,37 +162,33 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 🔹 Сторінка "Контакти" */
+/* 🔹 Форма контакту */
 .contact {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .contact form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    max-width: 400px;
+    margin: auto;
 }
 
-.contact input, .contact textarea {
+.contact input, .contact textarea, .contact button {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    margin-top: 10px;
     border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
 }
 
 .contact button {
-    padding: 12px;
     background: #ff4081;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
     transition: 0.3s;
 }
 
