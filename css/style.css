@@ -196,23 +196,71 @@ footer {
     background: #e6005c;
 }
 
-/* 🔹 Адаптивний дизайн (мобільна версія) */
+/* 🔹 Бургер-меню */
+.burger-menu {
+    display: flex; /* Видимий на мобільних */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px; /* Більший розмір */
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Розміщуємо справа */
+    top: 15px;  /* Вирівнюємо по висоті */
+    z-index: 1000; /* Щоб було вище всього */
+}
+
+/* 🔹 Смужки бургер-меню */
+.burger-menu div {
+    width: 100%;
+    height: 6px; /* Товстіші лінії */
+    background-color: white; /* Білі лінії */
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Анімація для відкритого меню */
+.burger-menu.active div:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+}
+.burger-menu.active div:nth-child(2) {
+    opacity: 0;
+}
+.burger-menu.active div:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+/* 🔹 Ховаємо меню на великих екранах */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+}
+
+
+/* 🔹 Адаптивне меню */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
+    .burger-menu {
+        display: flex;
     }
 
     .nav-links {
+        display: none;
         flex-direction: column;
-        padding-top: 10px;
+        width: 100%;
+        background: #222;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .nav-links li {
-        margin: 5px 0;
-    }
-
-    .gallery-container {
-        flex-direction: column;
+        margin: 10px 0;
     }
 }
